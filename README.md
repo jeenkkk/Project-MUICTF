@@ -53,7 +53,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 - [Node.js](https://nodejs.org/) - JavaScript runtime
 - [npm](https://www.npmjs.com/) - Package manager
-- [Other dependencies or frameworks]
 
 ## Authors
 
