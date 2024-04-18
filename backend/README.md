@@ -1,12 +1,16 @@
-#environment
-##server.js
+# Environment
+
+## server.js
+
 const mongourl = "mongoURL"; // Your MongoDB URL
-##config folder
-###create auth.config.js
+
+### create config folder in app
+### create auth.config.js
+
 module.exports = {
   secret: "Your secret",
 };
-###create db.config.js
+### create db.config.js
 module.exports = {
   HOST: "host",
   PORT: 8080,
