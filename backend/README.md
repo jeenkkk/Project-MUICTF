@@ -12,6 +12,6 @@ module.exports = {
 };
 ### create db.config.js
 module.exports = {
-  HOST: "host",
+  HOST: "host", //can be localhost or 0.0.0.0 optional
   PORT: 8080,
 };
