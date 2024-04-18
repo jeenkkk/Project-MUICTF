@@ -1,9 +1,9 @@
 # Environment
 
 ## server.js
-
+```
 const mongourl = "mongoURL"; // Your MongoDB URL
-
+```
 ### create config folder in app
 ### create auth.config.js
 ```
