@@ -1,0 +1,148 @@
+.lpage {
+  background-color: #1a1a1a;
+  color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lbox1,
+.lbox2 {
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lbox1 {
+  background-color: #121212;
+}
+
+.lbox2 {
+  background: linear-gradient(90deg, #222222 0.12%, #222222 0.13%, #333333 44.81%, #444444 71.83%, #555555 99.89%);
+}
+
+.lbox2 h2 {
+  color: #FFFFFF;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 1024px) {
+  .lpage {
+    flex-direction: row;
+  }
+
+  .lbox1,
+  .lbox2 {
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .lbox1 {
+    order: 1;
+  }
+
+  .lbox2 {
+    order: 2;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+  }
+}
+
+.signInText {
+  cursor: default;
+  font-size: 4rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
+
+.usernameInput,
+.passwordInput {
+  margin-top: 0.5rem;
+  cursor: text;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #333333;
+  border: none;
+  width: 20rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+
+.usernameInput:focus,
+.passwordInput:focus {
+  outline: 0px solid rgba(255, 255, 255, 0);
+}
+
+.showHidePasswordButton {
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.showHidePasswordButton button {
+  background: none;
+  border: none;
+  cursor: grab;
+  font-family: 'Open Sans, sans-serif';
+  color: #FFFFFF;
+  text-decoration: underline;
+  outline: none;
+}
+
+.loginbutton {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-weight: lighter;
+  color: #ffffff;
+  background-color: #0070FF;
+  text-align: center;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.loginbutton:hover {
+  background-color: #0055cc;
+}
+
+.llogoinbox {
+  object-fit: cover;
+  max-height: 7rem;
+  width: auto;
+}
+
+.lwelcomeText {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  margin-top: 0.5rem;
+}
+
+.lsignupbox {
+  object-fit: cover;
+  cursor: pointer;
+  font-family: 'Open Sans, sans-serif';
+  font-weight: lighter;
+  color: #ffffff;
+  margin-top: 0.5rem;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lsignupbox:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000000;
+}

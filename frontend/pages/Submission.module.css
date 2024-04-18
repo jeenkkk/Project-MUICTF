@@ -1,0 +1,37 @@
+.container {
+    background-color: #000;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .submissionContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    overflow: auto;
+  }
+  
+  .flagSubmissionBox {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-height: 75px;
+    margin-bottom: 150px;
+  }

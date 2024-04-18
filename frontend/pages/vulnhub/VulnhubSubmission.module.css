@@ -1,0 +1,215 @@
+.pageStyle {
+  background-color: #DCD9D4;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.50) 0%,
+    rgba(0, 0, 0, 0.50) 100%
+  ),
+  radial-gradient(
+    at 50% 0%,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(0, 0, 0, 0.50) 50%
+  );
+  background-blend-mode: soft-light, screen;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.VulnhubPicContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  padding: 30px;
+  min-width: 48rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  margin-top: 0%;
+}
+
+.WholeNameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.nameContainerOnTop {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: #9d8189; /* Brown Pink */
+  padding: 15px;
+  width: 50rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.nameContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  background-color: #ffffff; /* White */
+  padding: 15px;
+  width: 50rem;
+  color: #f4acb7; /* Light Pink */
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.label {
+  font-size: larger;
+  font-weight: bold;
+  color: #77ce9b;
+}
+
+.value {
+  word-break: break-all;
+  font-size: larger;
+  font-weight: bold;
+  color: #b5b5b5;
+}
+
+.DifficultyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+  background-color: #ffffff; /* White */
+  padding: 30px;
+  min-width: 48rem;
+  max-width: 48rem;
+  border-radius: 8px;
+}
+
+.difficultyOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.difficultyOptions label {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #121212;
+  margin-top: 10px;
+}
+
+.DescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+  background-color: #ffffff; /* White */
+  padding: 30px;
+  min-width: 48rem;
+  border-radius: 8px;
+}
+
+/* Description Container Label Styles */
+.DescriptionContainer label {
+  margin-top: 10px;
+}
+
+.DescriptionContainer textarea {
+  width: 100%; /* Make the textarea take up the full width of the container */
+  min-height: 100px; /* Set a minimum height for the textarea */
+  resize: vertical; /* Allow vertical resizing if needed */
+}
+
+.CreatorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+  background-color: #ffffff; /* White */
+  padding: 30px;
+  min-width: 48rem;
+  border-radius: 8px;
+}
+
+.SizeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    background-color: #ffffff; /* White */
+    padding: 30px;
+    min-width: 48rem;
+    border-radius: 8px;
+  }
+
+  .FlagContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    background-color: #ffffff; /* White */
+    padding: 30px;
+    min-width: 48rem;
+    border-radius: 8px;
+  }
+  
+  .FlagContainer .label {
+    font-size: larger;
+    font-weight: bold;
+    color: #77ce9b;
+    margin-bottom: 10px;
+  }
+  
+  .FlagContainer input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .FlagContainer .actionGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .FlagContainer .submitButton,
+  .FlagContainer .cancelButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .FlagContainer .submitButton {
+    background-color: #77ce9b;
+    color: #ffffff;
+  }
+  
+  .FlagContainer .submitButton:hover {
+    background-color: #63b68c;
+  }
+  
+  .FlagContainer .cancelButton {
+    background-color: #e57373;
+    color: #ffffff;
+  }
+  
+  .FlagContainer .cancelButton:hover {
+    background-color: #d24d4d;
+  }
+
+  

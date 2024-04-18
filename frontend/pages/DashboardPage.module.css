@@ -1,0 +1,163 @@
+.pageStyle {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh; 
+  position: relative; /* Added position relative */
+}
+
+.matchmakingGrid {
+  position: absolute;
+  bottom: 20px; /* Adjust this value as needed */
+  right: 20px; /* Adjust this value as needed */
+}
+
+.matchmakingButton {
+  background-color: red;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Hover styles */
+.matchmakingButton:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.01); /* Increase size on hover */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .matchmakingButton {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+.boxStyle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+.VulnhubBox{
+  flex: 1;
+  height: 32rem;
+  border-radius: 0px;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  width: 100%; 
+}
+
+.VulnhubBox:hover{
+    box-shadow: 0 0 5px  #FFAC4E,
+    0 0 30px  #FFAC4E,
+    0 0 90px  #FFAC4E;
+    
+}
+
+.AssignmentBox {
+  flex: 1;
+  height: 32rem;
+  border-radius: 0px;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  width: 100%; 
+}
+.AssignmentBox:hover{
+  box-shadow: 0 0 5px  #F76491,
+  0 0 30px  #F76491,
+  0 0 90px  #F76491;
+}
+.VulnhubBox {
+  background-color: #FFAC4E;
+}
+
+.AssignmentBox {
+  background-color: #F76491;
+  margin-left: 0.5rem;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  margin-top: 0%;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .boxStyle {
+    width: 100%;
+  }
+}
+
+.profileModule {
+  margin-top: 1rem;
+  margin-left: 2.05rem;
+  cursor: pointer;
+  width: 3rem;
+  height: auto;
+  transition: all 0.3s ease; /* Added a general transition */
+}
+
+.profileModule:hover {
+  transform: scale(1.2); /* Increase the size on hover */
+  filter: brightness(1.2); /* Adjust brightness on hover */
+  transition: all 0.3s ease;
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 2.05rem;
+}
+
+.dropdownTrigger {
+  cursor: pointer;
+  padding: 10px;
+  background-position: left;
+  background-color: #222;
+  color: #fff;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 100%;
+  left: 0; /* Start from the left */
+  background-color: #222;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.dropdownContent div {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdownContent div:hover {
+  background-color: #555;
+  background-position: left;
+}

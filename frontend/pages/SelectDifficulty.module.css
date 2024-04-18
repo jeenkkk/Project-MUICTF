@@ -1,0 +1,25 @@
+.selectDifficulty {
+    background-color: #1E1E1E;
+    border: 1px solid #FFFFFF;
+    padding: 35px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 10px;
+    text-align: center;
+    position: absolute;
+    top: 22%;
+    margin-left: -65rem;
+  }
+  
+  
+  .selectDifficulty label {
+    margin-bottom: 10px;
+  }
+  
+  .selectDifficulty input {
+    color: #FFFFFF;
+  }
+  
+  

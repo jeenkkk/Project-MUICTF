@@ -1,0 +1,136 @@
+.pageStyle {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.searchBar input {
+  padding: 1rem;
+  width: 40rem;
+  max-width: calc(100% - 1rem);
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #3e364e4c;
+  border-color: #ffffff0c;
+  color: rgb(137, 137, 137);
+  border-radius: 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+.searchBar input:focus,
+.searchBar input:active {
+  border-color: #8a63ff;
+}
+
+.difficultyFilter {
+  display: flex;
+  align-items: center;
+  color: #6b80b6;
+}
+
+.difficultyFilter span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns per row */
+  gap: 20px;
+  /* Adjust the gap between grid items as needed */
+  margin-top: 20px;
+}
+
+.gridItem {
+  
+  /* Default background color */
+  color: #1d1a1a;
+  /* Default text color for the grid */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.gridItem.beginner {
+  background-color: rgb(55, 255, 55);
+}
+
+.gridItem.easy {
+  background-color: rgb(255, 255, 59);
+}
+
+.gridItem.easy-medium {
+  background-color: rgb(255, 184, 53);
+}
+
+.gridItem.medium {
+  background-color: rgb(255, 184, 53);
+}
+
+.gridItem.hard {
+  background-color: rgb(48, 255, 227);
+}
+
+.gridItem.unknown {
+  background-color: rgb(167, 75, 167);
+}
+
+.gridItem.question {
+  background-color: rgb(68, 68, 68);
+}
+
+.gridItem:hover {
+  background-color: #fcba069a;
+}
+
+.gridItem a {
+  color: #1d1a1a;
+  text-decoration: none;
+}
+
+.gridItem a:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: #1d2434;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pagination button:hover {
+  background-color: #ffffff5c;
+}
+
+.pagination .activePage {
+  background-color: #3a4764;
+  color: white;
+}

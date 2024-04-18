@@ -1,0 +1,70 @@
+.navbarStyle {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  /* Three columns: left icon, center content, right icon */
+  align-items: center;
+  justify-content: space-between;
+  /* Distribute items evenly along the main axis */
+  background-color: #34354A;
+  color: #ffffff;
+  padding: 1% 2%;
+}
+
+.logoContainerStyle {
+  display: flex;
+  gap: 10px;
+}
+
+.logoStyle {
+  width: 56.5px;
+  height: auto;
+  cursor: pointer;
+}
+
+.scoreBox {
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+
+.assignmentScore,
+.vulnhubScore {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 2rem;
+}
+
+.logoutStyle {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbarStyle {
+    grid-template-columns: 1fr;
+    /* Switch to a single column layout */
+    text-align: center;
+  }
+
+  .logoStyle {
+    width: 70px;
+  }
+
+  .logoutStyle {
+    width: 50px;
+  }
+
+  .assignmentScore,
+  .vulnhubScore {
+    margin: 5px 0;
+  }
+}

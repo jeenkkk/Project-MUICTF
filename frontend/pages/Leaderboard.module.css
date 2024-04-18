@@ -1,0 +1,313 @@
+.pageStyle {
+  background-color: #121212; 
+  color: #ffffff; 
+  min-height: 100vh;
+  position: relative; 
+}
+
+.container {
+  margin: 20px;
+
+}
+
+.leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+   background-color: #0F1523;  
+}
+
+.leaderboardTable th,
+.leaderboardTable td {
+  border-bottom: 1px solid #2b2b2b; 
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  color: #ffffff; 
+}
+
+.leaderboardTable th {
+  background-color: #212121;
+}
+
+.leaderboardTable td {
+  background-color: #1a1a1a; 
+}
+
+.leaderboardTable td input[type="text"] {
+  border: 1px solid #ffffff; 
+  background-color: #333333; 
+  text-align: center;
+  padding: 0.5rem;
+  color: #ffffff;
+}
+
+.invisibleBox {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gridItem {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 0.1rem;
+}
+
+.gridItemSelected {
+  padding: 10px 20px;
+  border: 1px solid #ffac4e;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffac4e;
+  color: #fff;
+}
+
+.gridItem:hover {
+  background-color: #333333;
+}
+
+
+.topicPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000; 
+}
+
+.topicPopup h2 {
+  margin-bottom: 20px;
+}
+
+.topicOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.topicOptions label {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.topicOptions input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.startButtonContainer {
+  position: absolute;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.startButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+.startButton:disabled {
+  background-color: #1a1a1a; /* Change to black for disabled state */
+}
+
+.startButton:disabled:hover {
+  background-color: #333333; /* Keep black for disabled state hover */
+}
+
+.startButton:not(:disabled) {
+  background-color: #3498db; /* Blue color for enabled state */
+}
+
+.startButton:not(:disabled):hover {
+  background-color: #2980b9; /* Darker blue for enabled state hover */
+}
+
+.startButton:hover {
+  background-color: #2980b9;
+}
+
+.queuingPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c3e50; 
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px; 
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.queuingPopup p {
+  margin-bottom: 15px;
+}
+
+.countdownTimer {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 15px; 
+}
+
+.acceptPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c3e50; 
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px; 
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.acceptPopup p {
+  margin-bottom: 15px; 
+}
+
+.acceptPopup button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px; 
+  cursor: pointer;
+  background-color: #2ecc71; 
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.acceptPopup button:hover {
+  background-color: #27ae60; 
+}
+
+.cooldownPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3); 
+}
+
+.cooldownPopup p {
+  margin-bottom: 15px; 
+}
+
+.cooldownPopup p:last-child {
+  margin-bottom: 0;
+}
+
+.cooldownPopup .countdownTimer {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 15px; 
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 1rem; 
+}
+
+.searchBar input {
+  padding: 1rem;
+  width: 40rem;
+  max-width: calc(100% - 1rem);
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #333333; 
+  border-color: #ffffff0c;
+  color: rgb(137, 137, 137);
+  border-radius: 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+  text-align: center; 
+}
+
+.searchBar input:focus,
+.searchBar input:active {
+  border-color: #8a63ff;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #757575;
+  color: #ffffff;
+}
+
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  background-color: #1D2434;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #3a4764;
+  color: white;
+}
+
+.pagination .activePage {
+  background-color: #3a4764;
+  color: white;
+}
+
+.pagination .nextPrevButton {
+  background-color: #1D2434; 
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .nextPrevButton:hover {
+  background-color: #3a4764; 
+  color: white;
+}

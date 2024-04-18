@@ -1,0 +1,196 @@
+.pageStyle {
+  height: 100%;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #0f0528, #0e0525, #0d0522, #0c041f, #0a041c, #0d061d, #0f091e, #110b1f, #151025, #1a132b, #1f1630, #251836);
+    min-height: 100vh;
+  }
+
+  .managerUsersText {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 2.5%;
+  }
+  
+  .managerUsersText:hover {
+    color: #ffffff; 
+    text-shadow:
+      0 0 7px #ffffff,
+      0 0 10px #ffffff,
+      0 0 21px #8e00ff,
+      0 0 42px #8e00ff,
+      0 0 82px #8e00ff,
+      0 0 92px #8e00ff,
+      0 0 102px #8e00ff,
+      0 0 151px #8e00ff;
+    cursor: default;
+  }
+
+  .searchBar {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    margin-left: 2.5%;
+  }
+  
+  .searchBar input {
+    padding: 1rem;
+    min-width: 70%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #3E364E4c;
+    border-color: #ffffff0c;
+    color: rgb(137, 137, 137);
+    border-radius: 1rem;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .searchBar input:focus,
+  .searchBar input:active {
+    border-color: #8a63ff; 
+  }
+  
+  
+  .labelStyle {
+    margin-left: 2.5%;
+  }
+  
+  #roleDropdown {
+    padding: 8%;
+    font-size: 16px;
+  }
+  
+.updateButton,
+.deleteButton {
+  margin-left: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.deleteButton{
+  background-color: #DC3545;
+}
+
+.updateButton{
+  background-color: #198754;
+}
+
+.updateButton:hover {
+  background-color: #45a049; 
+}
+
+.deleteButton:hover {
+  background-color: #e57373; 
+}
+
+  
+.tableContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.userTable {
+  width: 95%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.userTable th,
+.userTable td {
+  border-bottom: 1px solid #1D2434; 
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  color: #A6A9B4;
+}
+
+.userTable th {
+  background-color: #131C2D; 
+  color: white;
+  border-top: 1px solid #1D2434;
+}
+
+.userTable td {
+  border-top: 1px solid #1D2434; 
+  background-color: #0F1523; 
+}
+
+.userTable td input[type="text"] {
+  border: 1px solid #fff; 
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center; 
+  padding: 0.5rem; 
+  color: #fff; 
+}
+
+.userTable th:first-child,
+.userTable td:first-child {
+  border-left: none;
+}
+
+.userTable th:last-child,
+.userTable td:last-child {
+  border-right: none;
+}
+
+  
+  .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        text-align: center;
+  }
+  
+  .modal button {
+    margin: 0 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .modal button:hover {
+    background-color: #757575; 
+    color: #ffffff; 
+  }
+
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pagination button {
+    background-color: #1D2434;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #ffffff5c; 
+  }
+  
+  .pagination .activePage {
+    background-color: #3a4764;
+    color: white;
+  }
+  
+  .ellipsis {
+    color: white;
+  }

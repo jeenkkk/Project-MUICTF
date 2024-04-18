@@ -1,0 +1,82 @@
+.lpage {
+  background-image: url(homepage_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 5%;
+}
+
+.lbox {
+  width: 45%;
+  height: 85%;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-position: center;
+  border-radius: 30px;
+  border: 1.5px solid #FFFFFF;
+  backdrop-filter: blur(100px);
+  margin-left: 28%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.llogoinbox {
+  height: 15%;
+  width: Auto;
+  margin-top: -8%;
+}
+
+.ldividerline {
+  width: 75%;
+  height: 3px;
+  background-color: #cacaca;
+  margin-top: 0%;
+}
+
+.lloginbox {
+  width: 20%;
+  height: 11%;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  margin-left: -55%;
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans, sans-serif';
+  color: #CACACA;
+  cursor: pointer;
+}
+
+.lsignupbox {
+  width: 20%;
+  height: 11%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  margin-left: -15%;
+  margin-top: -10.41%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans, sans-serif';
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
+.loginbutton {
+  width: 75%;
+  height: 10%;
+  background: linear-gradient(180deg, #5489E7, #24D4DC);
+  margin-top: 6%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans, sans-serif';
+  color: #FFFFFF;
+  cursor: pointer;
+}

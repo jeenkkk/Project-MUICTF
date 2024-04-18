@@ -1,0 +1,90 @@
+.pageStyle {
+  height: 100%;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #0f0528, #0e0525, #0d0522, #0c041f, #0a041c, #0d061d, #0f091e, #110b1f, #151025, #1a132b, #1f1630, #251836);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.StudentTrackerText {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 2.5%;
+}
+
+.StudentTrackerText:hover {
+  color: #ffffff; 
+  text-shadow:
+    0 0 7px #ffffff,
+    0 0 10px #ffffff,
+    0 0 21px #8e00ff,
+    0 0 42px #8e00ff,
+    0 0 82px #8e00ff,
+    0 0 92px #8e00ff,
+    0 0 102px #8e00ff,
+    0 0 151px #8e00ff;
+  cursor: default;
+}
+
+.tableContainer {
+  margin: 0 20px 20px; /* Adjust the margin as needed */
+  max-height: 600px; /* Set maximum height for vertical scrollbar */
+  overflow-x: auto;
+  overflow-y: auto; /* Add vertical scrollbar */
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableWrapper {
+  max-width: 100%;
+}
+
+.userTable {
+  width: max-content;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.userTable th,
+.userTable td {
+  border-bottom: 1px solid #1D2434; 
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  color: #A6A9B4;
+}
+
+.userTable th {
+  background-color: #131C2D; 
+  color: white;
+  border-top: 1px solid #1D2434;
+  position: sticky; /* Make the first column sticky */
+  left: 0; /* Stick it to the left */
+  z-index: 1; /* Ensure it appears above other columns */
+}
+
+.userTable td {
+  border-top: 1px solid #1D2434; 
+  background-color: #0F1523; 
+}
+
+.userTable td input[type="text"] {
+  border: 1px solid #fff; 
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center; 
+  padding: 0.5rem; 
+  color: #fff; 
+}
+
+.userTable th:first-child,
+.userTable td:first-child {
+  border-left: none;
+}
+
+.userTable th:last-child,
+.userTable td:last-child {
+  border-right: none;
+}

@@ -1,0 +1,319 @@
+/* QuestionofTC.module.css */
+
+/* General Page Styles */
+.pageStyle {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Search Bar Styles */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.searchBar input {
+  padding: 1rem;
+  width: 40rem;
+  max-width: calc(100% - 1rem);
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #3e364e4c;
+  border-color: #ffffff0c;
+  color: rgb(137, 137, 137);
+  border-radius: 1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.searchBar input:focus,
+.searchBar input:active {
+  border-color: #8a63ff;
+}
+
+/* Grid Styles */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+  gap: 20px; /* Adjust the gap between grid items as needed */
+  margin-top: 20px;
+  
+}
+
+.gridItem {
+  background-color: #fcbb06;
+  color: #1d1a1a; /* Default text color for the grid */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 39px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.gridItem:hover {
+  background-color: #fcba069a; 
+}
+
+.finished {
+  background-color: rgb(100, 100, 100);
+}
+
+.gridItem a {
+  color: #1d1a1a;
+  text-decoration: none;
+}
+
+.gridItem a:hover {
+  text-decoration: underline;
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: #1d2434;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pagination button:hover {
+  background-color: #ffffff5c;
+}
+
+.pagination .activePage {
+  background-color: #3a4764;
+  color: white;
+}
+
+/* Create Question Popup Styles */
+.createQuestionPopup {
+  background-color: #1d2434;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto; /* Center the popup horizontally */
+  position: fixed;
+  top: 50%; /* Center the popup vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Ensure the popup is on top of other elements */
+}
+
+.createQuestionPopup label {
+  color: #6b80b6;
+  margin-top: 10px;
+  display: block;
+}
+
+.createQuestionPopup input,
+.createQuestionPopup textarea,
+.createQuestionPopup select {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #3e364e4c;
+  border-color: #ffffff0c;
+  color: rgb(137, 137, 137);
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.createQuestionPopup input:focus,
+.createQuestionPopup textarea:focus,
+.createQuestionPopup select:focus {
+  border-color: #8a63ff;
+}
+
+.createQuestionPopup button {
+  background-color: #1d2434;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 10px;
+}
+
+.createQuestionPopup button:hover {
+  background-color: #ffffff5c;
+}
+
+/* Edit Question Popup Styles */
+.editQuestionPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.editQuestionForm {
+  background-color: #1d2434; /* Match the Create Question popup background color */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto; /* Add a scrollbar when content exceeds height */
+}
+
+.editQuestionForm h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.editQuestionForm .inputGroup {
+  margin-bottom: 15px;
+}
+
+.editQuestionForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.editQuestionForm input,
+.editQuestionForm textarea,
+.editQuestionForm select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.editQuestionForm .buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-end;
+  
+}
+
+/* Change color for Edit Question button */
+.editQuestionForm button {
+  background-color: #fcbb06; /* Match the Create Question button color */
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.editQuestionForm button:hover {
+  background-color: #fcba069a; /* Match the Create Question button hover color */
+}
+
+/* Scrollbar styles */
+.editQuestionForm textarea {
+  resize: vertical; /* Allow vertical resizing */
+  max-height: 200px; /* Set your desired maximum height */
+}
+
+/* ... (existing styles) */
+
+/* studentTracker.module.css */
+.StudentTrackerText {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 2.5%;
+}
+
+.StudentTrackerText:hover {
+  color: #ffffff; 
+  text-shadow:
+    0 0 7px #ffffff,
+    0 0 10px #ffffff,
+    0 0 21px #8e00ff,
+    0 0 42px #8e00ff,
+    0 0 82px #8e00ff,
+    0 0 92px #8e00ff,
+    0 0 102px #8e00ff,
+    0 0 151px #8e00ff;
+  cursor: default;
+}
+
+.tableContainer {
+  margin: 0 20px 20px; /* Adjust the margin as needed */
+  max-height: 600px; /* Set maximum height for vertical scrollbar */
+  overflow-x: auto;
+  overflow-y: auto; /* Add vertical scrollbar */
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableWrapper {
+  max-width: 100%;
+}
+
+.userTable {
+  width: max-content;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.userTable th,
+.userTable td {
+  border-bottom: 1px solid #1D2434; 
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  color: #A6A9B4;
+}
+
+.userTable th {
+  background-color: #131C2D; 
+  color: white;
+  border-top: 1px solid #1D2434;
+  position: sticky; /* Make the first column sticky */
+  left: 0; /* Stick it to the left */
+  z-index: 1; /* Ensure it appears above other columns */
+}
+
+.userTable td {
+  border-top: 1px solid #1D2434; 
+  background-color: #0F1523; 
+}
+
+.userTable td input[type="text"] {
+  border: 1px solid #fff; 
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center; 
+  padding: 0.5rem; 
+  color: #fff; 
+}
+
+.userTable th:first-child,
+.userTable td:first-child {
+  border-left: none;
+}
+
+.userTable th:last-child,
+.userTable td:last-child {
+  border-right: none;
+}
+
