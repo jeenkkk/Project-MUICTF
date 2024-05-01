@@ -49,7 +49,7 @@ const DashboardPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <div className={styles.pageStyle}>
         <Navbar />
         <div

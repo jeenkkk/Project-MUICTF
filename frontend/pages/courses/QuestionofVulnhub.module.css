@@ -12,7 +12,12 @@
   margin: 10px 0;
   padding: 0 20px;
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .searchBar input {
   padding: 1rem;
   width: 40rem;
@@ -79,6 +84,9 @@
 }
 
 .gridItem.medium {
+  background-color: rgb(255, 184, 53);
+}
+.gridItem.medium-hard {
   background-color: rgb(255, 184, 53);
 }
 

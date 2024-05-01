@@ -13,6 +13,7 @@ axios.defaults.headers.common = {
 const Feedback = () => {
   // State to store feedback data
   const [feedbackData, setFeedbackData] = useState({ feedbacks: [] });
+  const [feedbackvulnData, setFeedbackvulnData] = useState({ feedbacks: [] });
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
@@ -21,17 +22,22 @@ const Feedback = () => {
       setFeedbackData({ feedbacks: response.data });
     }).catch((error) => {
       handleError(error);
-    } );
+    });
+    axios.get(`${process.env.API_URL}/api/getfeedbackvuln`).then((response) => {
+      setFeedbackvulnData({ feedbacks: response.data });
+    }).catch((error) => {
+      handleError(error);
+    });
   }, []);
-
+  console.log(feedbackData);
   // Function to handle click on grid item
   const handleItemClick = (name) => {
     // Navigate dynamically to the feedback name
-    if(name.includes('vulnhub')){
+    if (name.includes('vulnhub')) {
       name = name.replace('vulnhub', '');
       window.location.replace('/vulnhub?vulnhub=' + name);
     }
-    else{
+    else {
       window.location.replace('/question?question=' + name);
     }
   };
@@ -57,12 +63,26 @@ const Feedback = () => {
   };
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <h1>Feedback</h1>
         <div className={styles.gridContainer}>
           {feedbackData.feedbacks.map((feedback, index) => (
+            <div
+              className={styles.gridItem}
+              key={index}
+              onClick={() => handleItemClick(feedback.name)}
+            >
+              <div className={styles.feedbackName}>Question: {feedback.name}   Topic: {feedback.topic}</div>
+              <div className={styles.feedbackDescription}>Feedback: {feedback.description}</div>
+              <div className={styles.feedbackUser}>User: {feedback.user}</div>
+              <button onClick={(e) => handleDeleteFeedback(e, feedback.name, feedback.description, feedback.user)}>Done</button>
+            </div>
+          ))}
+        </div>
+        <div className={styles.gridContainer}>
+          {feedbackvulnData.feedbacks.map((feedback, index) => (
             <div
               className={styles.gridItem}
               key={index}

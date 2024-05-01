@@ -18,14 +18,14 @@ module.exports = function (app) {
     // topic controller
     app.post("/api/teacher/createtopic", authJwt.verifyToken, authJwt.isteacher, checkduplicatetopic, controller.createtopic); //create topic
     app.delete("/api/teacher/deletetopic/:topic", authJwt.verifyToken, authJwt.isteacher, controller.deletetopic); //delete topic
-    app.put("/api/teacher/updatetopic/:topic", authJwt.verifyToken, authJwt.isteacher, controller.updatetopic); //update topic
+    app.post("/api/teacher/updatetopic/:topic", authJwt.verifyToken, authJwt.isteacher, controller.updatetopic); //update topic
     app.get("/api/alltopic", controller.alltopic); //get all topics
     app.get("/api/gettopic/:topic", authJwt.verifyToken, controller.gettopic); //get 1 topic
 
     // course controller
     app.post("/api/teacher/createcourse", authJwt.verifyToken, authJwt.isteacher, checkduplicatecourse, controller.createcourse); //create courses
     app.delete("/api/teacher/deletecourse/:course", authJwt.verifyToken, authJwt.isteacher, controller.deletecourse); //delete courses
-    app.put("/api/teacher/updatecourse/:course", authJwt.verifyToken, authJwt.isteacher, controller.updatecourse); //update courses
+    app.post("/api/teacher/updatecourse/:course", authJwt.verifyToken, authJwt.isteacher, controller.updatecourse); //update courses
     app.get("/api/teacher/allcourse", controller.allcourse); //get all courses
     app.get("/api/teacher/getcourse/:course", authJwt.verifyToken, controller.getcourse); //get 1 course
     app.post("/api/teacher/addquestiontocourse/:course", authJwt.verifyToken, authJwt.isteacher, controller.addquestiontocourse); //add question to course
@@ -46,7 +46,7 @@ module.exports = function (app) {
     // Feedback controller
     app.get("/api/getfeedback", authJwt.verifyToken, authJwt.isteacher, File.getfeedback); //get feedback
     app.delete("/api/deletefeedback", authJwt.verifyToken, authJwt.isteacher, File.deletefeedback); //delete feedback
-
+    app.get("/api/getfeedbackvuln", authJwt.verifyToken, authJwt.isteacher, File.getfeedbackvuln); //get feedback vulnhub
     // All students controller
     app.get("/api/allstudent", authJwt.verifyToken, authJwt.isteacher, controller.getallstudent); //get all students
 

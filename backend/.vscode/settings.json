@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/499354aa-daf8-42c6-9a7b-4c4c5e315148/resourceGroups/muictf/providers/Microsoft.Web/sites/muictfbackend",
+    "appService.deploySubpath": "."
+}

@@ -77,9 +77,14 @@ const QuestionSubmission = () => {
     };
 
     const handleFeedbackSubmission = () => {
+        const specialCharactersRegex = /[%&<>"'/]/;
         axios.defaults.withCredentials = true;
         const urlParams = new URLSearchParams(window.location.search);
         const problemName = urlParams.get('question');
+        if(feedback.length<=0 || feedback.length>1000 || specialCharactersRegex.test(feedback)){
+            alert("Feedback must be between 1 and 1000 characters long and should not contain special characters like %, &, <, >, \", ', /");
+            return;
+        }
         const res = axios.post(`${process.env.API_URL}/api/sendfeedback`, {
             problemname: problemName,
             feedback: feedback
@@ -88,40 +93,41 @@ const QuestionSubmission = () => {
     };
 
     const handleLike = async () => {
-        try {
-            const response = await axios.post(`${process.env.API_URL}/api/likeordislike`, {
-                problemname: name,
-                likeordislike: 'like'
-            });
-            // Update like count based on server response
-            if (response.status === 200) {
-                setLikeCount(likeCount + (userVote === 'like' ? -1 : 1));
-                setDislikeCount(dislikeCount + (userVote === 'dislike' ? -1 : 0));
-                setUserVote('like');
-            }
-        } catch (error) {
-            alert("Failed to like the problem");
+        const response = await axios.post(`${process.env.API_URL}/api/likeordislike`, {
+            problemname: name,
+            likeordislike: 'like'
+        });
+        // Update like count based on server response
+        if (response.status === 200) {
+            setLikeCount(likeCount + (userVote === 'like' ? -1 : 1));
+            setDislikeCount(dislikeCount + (userVote === 'dislike' ? -1 : 0));
+            setUserVote('like');
+            const res = await axios.get(`${process.env.API_URL}/api/getfile/` + problemName);
+            setDatas(res.data);
+            const res2 = await axios.get(`${process.env.API_URL}/api/getinfo`);
+            setUserInfo(res2.data);
         }
+
     };
 
     const handleDislike = async () => {
-        try {
-            const response = await axios.post(`${process.env.API_URL}/api/likeordislike`, {
-                problemname: name,
-                likeordislike: 'dislike'
-            });
-            // Update dislike count based on server response
-            if (response.status === 200) {
-                setDislikeCount(dislikeCount + (userVote === 'dislike' ? -1 : 1));
-                setLikeCount(likeCount + (userVote === 'like' ? -1 : 0));
-                setUserVote('dislike');
-            }
-        } catch (error) {
-            alert("Failed to dislike the problem");
+        const response = await axios.post(`${process.env.API_URL}/api/likeordislike`, {
+            problemname: name,
+            likeordislike: 'dislike'
+        });
+        // Update dislike count based on server response
+        if (response.status === 200) {
+            setDislikeCount(dislikeCount + (userVote === 'dislike' ? -1 : 1));
+            setLikeCount(likeCount + (userVote === 'like' ? -1 : 0));
+            setUserVote('dislike');
+            const res = await axios.get(`${process.env.API_URL}/api/getfile/` + problemName);
+            setDatas(res.data);
+            const res2 = await axios.get(`${process.env.API_URL}/api/getinfo`);
+            setUserInfo(res2.data);
         }
     };
     return (
-        <>
+        <div className={styles.pageContainer}>
             <Navbar />
             <div className={styles.pageStyle}>
                 <div className={styles.gridContainer}>
@@ -237,7 +243,7 @@ const QuestionSubmission = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

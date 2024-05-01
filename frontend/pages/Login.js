@@ -39,48 +39,50 @@ const LoginPage = () => {
     }
   };
   return (
-    <div className={styles.lpage}>
-      <div className={styles.lbox2}>
-        <img
-          src="muictf_wlogo.png"
-          alt="Logo"
-          className={styles.llogoinbox}
-        />
-        <div className={styles.lwelcomeText}>
-          <p>Welcome, Everyone!</p>
-          <p>Register with your personal details to use all of the site features</p>
-        </div>
-        <div className={styles.lsignupbox} onClick={handleSignupClick}>
-          Sign Up
-        </div>
-      </div>
-      <div className={styles.lbox1}>
-        <div className={styles.signInText}>Sign In</div>
-        <div className={styles.usernameInputBox}>
-          <input
-            type="text"
-            placeholder="Username"
-            className={styles.usernameInput}
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+    <div className={styles.pageContainer}>
+      <div className={styles.lpage}>
+        <div className={styles.lbox2}>
+          <img
+            src="muictf_wlogo.png"
+            alt="Logo"
+            className={styles.llogoinbox}
           />
-        </div>
-        <div className={styles.lpasswordbox}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            className={styles.passwordInput}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <div className={styles.showHidePasswordButton}>
-            <button onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? 'Hide' : 'Show'}
-            </button>
+          <div className={styles.lwelcomeText}>
+            <p>Welcome, Everyone!</p>
+            <p>Register with your personal details to use all of the site features</p>
+          </div>
+          <div className={styles.lsignupbox} onClick={handleSignupClick}>
+            Sign Up
           </div>
         </div>
-        <div className={styles.loginbutton} onClick={handleDashboardClick}>
-          Sign In
+        <div className={styles.lbox1}>
+          <div className={styles.signInText}>Sign In</div>
+          <div className={styles.usernameInputBox}>
+            <input
+              type="text"
+              placeholder="Username"
+              className={styles.usernameInput}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className={styles.lpasswordbox}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              className={styles.passwordInput}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className={styles.showHidePasswordButton}>
+              <button onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+          </div>
+          <div className={styles.loginbutton} onClick={handleDashboardClick}>
+            Sign In
+          </div>
         </div>
       </div>
     </div>

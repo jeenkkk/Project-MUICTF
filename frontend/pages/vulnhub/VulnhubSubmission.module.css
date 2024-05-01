@@ -19,7 +19,12 @@
   align-items: center;
   flex-direction: column;
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .VulnhubPicContainer {
   display: flex;
   flex-direction: column;

@@ -5,6 +5,13 @@
   position: relative; /* Added position relative */
 }
 
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .matchmakingGrid {
   position: absolute;
   bottom: 20px; /* Adjust this value as needed */

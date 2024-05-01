@@ -9,6 +9,7 @@ const fs = require('fs');
 const Topic = require("../models/topic.model");
 const Course = require("../models/course.model");
 const Pather = require("path");
+const Challenge = db.challenge;
 const specialCharactersRegex = /[%&<>"'/]/;
 exports.upload = async (req, res) => {
     if (req.body.problemName == null || req.body.problemName == "" || req.body.Topic == null || req.body.Topic == "" || req.body.answer == null || req.body.answer == "") {
@@ -29,7 +30,7 @@ exports.upload = async (req, res) => {
 
 
     try {
-        if (req.body.course !== null && req.body.course !== "") {
+        if (req.body.course) {
             const fileobj = new File({
                 problemname: req.body.problemName,
                 topic: req.body.Topic,
@@ -111,7 +112,7 @@ exports.uploadproblem = async (req, res) => {
         return res.status(400).send({ message: "Failed! Special characters are not allowed" });
     }
     try {
-        if (req.body.course !== null && req.body.course !== "") {
+        if (req.body.course) {
             const fileobj = new File({
                 score: req.body.score,
                 problemname: req.body.problemName,
@@ -379,6 +380,18 @@ exports.updatequestion = async (req, res) => {
                 res.status(404).send({ message: "Cannot update question" });
                 return;
             }
+            if(req.body.answer == ""){
+                req.body.answer = file.answer;
+            }
+            if(req.body.topic == ""){
+                req.body.topic = file.topic;
+            }
+            if(req.body.score == ""){
+                req.body.score = file.score;
+            }
+            if(req.body.description == ""){
+                req.body.description = file.description;
+            }
             file.topic = req.body.Topic;
             file.score = req.body.score;
             file.description = req.body.description;
@@ -414,6 +427,18 @@ exports.updatefile = async (req, res) => {
                 res.status(404).send({ message: "Cannot update file" });
                 return;
             }
+            if(req.body.answer == ""){
+                req.body.answer = file.answer;
+            }
+            if(req.body.topic == ""){
+                req.body.topic = file.topic;
+            }
+            if(req.body.score == ""){
+                req.body.score = file.score;
+            }
+            if(req.body.description == ""){
+                req.body.description = file.description;
+            }
             fs.unlink(file.path, (err) => {
                 if (err) {
                     res.status(404).send({ message: "Cannot update file" });
@@ -441,8 +466,8 @@ exports.updatefile = async (req, res) => {
 
 exports.sendfeedback = async (req, res) => {
     try {
-        if (req.body.feedback === "") {
-            return res.status(404).send({ message: "Feedback is required!" });
+        if (req.body.feedback.length <= 0 || req.body.feedback.length > 1000 || specialCharactersRegex.test(req.body.feedback)) {
+            res.status(404).send({ message: "Feedback must be between 1 and 1000 characters and cannot contain special characters" });
         }
         const authHeader = req.headers['authorization'];
         if (!authHeader) {
@@ -467,6 +492,42 @@ exports.sendfeedback = async (req, res) => {
             file.feedback.push(req.body.feedback);
             file.userfeedback.push(user.username);
             file.save();
+            res.status(200).send({ message: "Feedback was submitted successfully!" });
+        });
+
+    }
+    catch (err) {
+        res.status(500).send({ message: "Something went wrong" });
+    }
+}
+exports.sendfeedbackvulnhub = async (req, res) => {
+    try {
+        if (req.body.feedback.length <= 0 || req.body.feedback.length > 1000 || specialCharactersRegex.test(req.body.feedback)) {
+            res.status(404).send({ message: "Feedback must be between 1 and 1000 characters and cannot contain special characters" });
+        }
+        const authHeader = req.headers['authorization'];
+        if (!authHeader) {
+            // If Authorization header is missing, send a 401 Unauthorized response
+            return res.status(401).json({ error: 'Authorization header missing' });
+        }
+        // Extract the token part from the Authorization header
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, config.secret);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(404).send({ message: "User Not found." });
+        }
+
+        Challenge.findOne({
+            problemname: req.body.problemname,
+        }).exec((err, vuln) => {
+            if (err) {
+                res.status(404).send({ message: "Something went wrong" });
+                return;
+            }
+            vuln.feedback.push(req.body.feedback+"---vulnhub");
+            vuln.userfeedback.push(user.username);
+            vuln.save();
             res.status(200).send({ message: "Feedback was submitted successfully!" });
         });
 
@@ -507,6 +568,46 @@ exports.getfeedback = async (req, res) => {
                     });
                 }
             }
+            
+            res.status(200).send(feedbacks);
+        });
+    } catch (err) {
+        res.status(500).send({ message: err });
+    }
+
+}
+exports.getfeedbackvuln = async (req, res) => {
+    try {
+        const authHeader = req.headers['authorization'];
+        if (!authHeader) {
+            // If Authorization header is missing, send a 401 Unauthorized response
+            return res.status(401).json({ error: 'Authorization header missing' });
+        }
+        // Extract the token part from the Authorization header
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, config.secret);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(404).send({ message: "User Not found." });
+        }
+
+        Challenge.find({}).exec((err, files) => {
+            if (err) {
+                res.status(404).send({ message: err });
+                return;
+            }
+            var feedbacks = []; // array to store feedbacks
+            for (var i = 0; i < files.length; i++) { // loop through all the questions
+                for (var j = 0; j < files[i].feedback.length; j++) { // loop through all the feedbacks
+                    feedbacks.push({
+                        name: files[i].Name+" vulnhub",
+                        description: files[i].feedback[j],
+                        user: files[i].userfeedback[j],
+                        topic: "Vulnhub",
+                    });
+                }
+            }
+            
             res.status(200).send(feedbacks);
         });
     } catch (err) {

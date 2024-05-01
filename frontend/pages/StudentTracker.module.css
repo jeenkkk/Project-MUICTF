@@ -5,7 +5,12 @@
   color: #ffffff;
   min-height: 100vh;
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .StudentTrackerText {
   margin: 10px 0;
   font-size: 18px;

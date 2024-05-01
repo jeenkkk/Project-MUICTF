@@ -7,25 +7,17 @@ var bcrypt = require("bcryptjs");
 const specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
 const blacklist = new Set();
 exports.signup = (req, res) => {
-  if (!req.body.username || req.body.username === "") {
-    res.status(400).send({ message: "Username is required!" });
-    return;
-  }
-  if (!req.body.email) {
-    res.status(400).send({ message: "Email is required!" });
-    return;
-  }
-  if (!req.body.password) {
-    res.status(400).send({ message: "Password is required!" });
-    return;
-  }
   // input validation
-  if (req.body.username.length < 5) {
-    res.status(400).send({ message: "Username must be at least 3 characters long!" });
+  if (!req.body.username || req.body.username === "" || !req.body.email || req.body.email === "" || !req.body.password || req.body.password === "") {
+    res.status(400).send({ message: "Username is required!, Email is required!, Password is required!"});
     return;
   }
-  if (req.body.password.length < 6) {
-    res.status(400).send({ message: "Password must be at least 6 characters long!" });
+  if (req.body.username.length < 5) {
+    res.status(400).send({ message: "Username must be at least 5 characters long!" });
+    return;
+  }
+  if (req.body.password.length < 12) {
+    res.status(400).send({ message: "Password must be at least 12 characters long!" });
     return;
   }
   if (req.body.username === req.body.password) {
@@ -34,6 +26,16 @@ exports.signup = (req, res) => {
   }
   if (specialCharacters.test(req.body.username)) {
     res.status(400).send({ message: "Username cannot contain special characters!" });
+    return;
+  }
+  const password = req.body.password;
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSpecialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
+  const hasConsecutiveDuplicates = /(.)\1\1\1/.test(password);
+  if (password.length < 12 || !hasUpperCase || !hasLowerCase || !hasNumber || !hasSpecialChar || hasConsecutiveDuplicates) {
+    res.status(400).send({ message: "Password must be at least 12 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!" });
     return;
   }
   try {

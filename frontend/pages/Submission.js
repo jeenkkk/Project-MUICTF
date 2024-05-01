@@ -4,6 +4,7 @@ import styles from './Submission.module.css';
 
 const Submission = () => {
   return (
+    <div className={styles.pageContainer}>
     <div className={styles.container}>
       <Navbar />
       <div className={styles.submissionContent}>
@@ -12,6 +13,7 @@ const Submission = () => {
       <div className={styles.flagSubmissionBox}>
         {/* Content of Flag Submission Box */}
       </div>
+    </div>
     </div>
   );
 };

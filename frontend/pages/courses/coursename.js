@@ -293,7 +293,7 @@ const QuestionofTC = () => {
     };
 
     return (
-        <>
+        <div className={styles.pageContainer}>
             {/* Navbar */}
             <Navbar />
 
@@ -544,7 +544,7 @@ const QuestionofTC = () => {
                 )}
 
             </div>
-        </>
+            </div>
     );
 };
 

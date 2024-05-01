@@ -3,7 +3,7 @@ const User = mongoose.model(
   "User",
   new mongoose.Schema({
     username: { type: String, required: true, minlength: 3, maxlength: 30 },
-    email: { type: String, required: true, unique: true }, //unique is used to prevent duplicate email
+    email: { type: String, required: true},
     password: { type: String, required: true, },
     roles: { type: String, required: false, default: "Student" },
     Question: [

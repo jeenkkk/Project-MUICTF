@@ -9,7 +9,7 @@ const secret = require('./app/config/auth.config');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const corsOptions = {
-  origin: 'localhost:3000',
+  origin: 'https://proud-plant-014e26700.5.azurestaticapps.net',
   methods: "GET,PUT,POST,DELETE",
   credentials: true,
 };
@@ -28,10 +28,9 @@ const Role = db.role;
 const Challenge = db.challenge;
 
 // connect to database
-const mongourl = "mongoURL"; // Your MongoDB URL
 mongoose
   .connect(
-    mongourl,
+    `mongodb+srv://jeen:asd123zxc456123ko@cluster0.kqdhwc7.mongodb.net/database`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -61,7 +60,7 @@ const server = http.createServer(app).listen(PORT, () => {
 
 const io = socketIo(server, {
   cors: {
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://proud-plant-014e26700.5.azurestaticapps.net'],
     methods: ["GET", "POST"],
     credentials: true // enable set cookie
   }

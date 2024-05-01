@@ -173,32 +173,40 @@ const randomquestionfromtopic = [];
 let randomtopic = ""; // Changed from const to let
 let secondplayeraccept = 0;
 exports.randomquestionfromtopic = async (req, res) => {
-    try {
-        secondplayeraccept += 1;
-        randomquestionfromtopic.push(req.params.topic);
-        const firstplayertopic = randomquestionfromtopic[0].split(",!,!");
-        if (randomquestionfromtopic.length > 1) {
-            const secondplayertopic = randomquestionfromtopic[1].split(",!,!");
-            const sametopic = firstplayertopic.filter(value => secondplayertopic.includes(value));
-            const randomIndex = Math.floor(Math.random() * sametopic.length);
-            randomtopic = sametopic[randomIndex - 1]; // Reassigned value
+    secondplayeraccept += 1;
+    randomquestionfromtopic.push(req.params.topic);
+    console.log("Random question from topic:", randomquestionfromtopic);
+    const firstplayertopic = randomquestionfromtopic[0].split(",");
+    console.log("First player topic:", firstplayertopic);
+    if (randomquestionfromtopic.length > 1) {
+        const secondplayertopic = randomquestionfromtopic[1].split(",");
+        console.log("Second player topic:", secondplayertopic);
+        const sametopic = firstplayertopic.filter(value => secondplayertopic.includes(value));
+        const randomIndex = Math.floor(Math.random() * sametopic.length);
+        console.log("same topic:", sametopic);
+        randomtopic = sametopic[randomIndex - 1]; // Reassigned value
+        if (randomtopic === undefined) {
+            randomtopic = sametopic[randomIndex];
         }
-        if (randomtopic !== "" && secondplayeraccept === 2) {
-            try {
-                Topic.findOne({ topic: randomtopic }, (err, topic) => {
-                    const question = topic.Question[Math.floor(Math.random() * topic.Question.length)];
-                    secondplayeraccept = 0;
-                    req.app.get('io').emit('randomQuestion', { message: question });
-                });
-            } catch (error) {
-                console.error("Error in fetching random question:", error);
-                res.status(500).json({ message: "Error in fetching random question." });
-            }
-        }
-    } catch (error) {
-        res.status(500).json({ message: "Error in fetching random question." });
+        console.log("Random topic:", randomtopic);
     }
-
+    if (randomtopic !== "" && secondplayeraccept === 2) {
+        try {
+            console.log("Random topic real:", randomtopic);
+            Topic.findOne({ Name: randomtopic }, (err, topics) => {
+                console.log("Topics:", topics);
+                const question = topics.Question[Math.floor(Math.random() * topics.Question.length)];
+                console.log("Question:", question);
+                secondplayeraccept = 0; // Reset secondplayeraccept
+                randomquestionfromtopic.pop(); // Remove the topic from the array
+                randomtopic = ""; // Reset randomtopic
+                req.app.get('io').emit('randomQuestion', { message: question });
+            });
+        } catch (error) {
+            console.error("Error in fetching random question:", error);
+            res.status(500).json({ message: "Error in fetching random question." });
+        }
+    }
 };
 
 exports.checkanswerrank = async (req, res) => {

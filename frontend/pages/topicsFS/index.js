@@ -48,7 +48,7 @@ const topicsFS = () => {
   });
 
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.navbarContainer}></div>
@@ -75,7 +75,7 @@ const topicsFS = () => {
           ))}
         </div>
       </div>
-    </>
+      </div>
   );
 };
 

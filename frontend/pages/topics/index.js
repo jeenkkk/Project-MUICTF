@@ -141,13 +141,19 @@ const topics = () => {
 
   const handleUpdate = () => {
     updateTopics();
-    window.location.reload(); // Refresh the page
+    //window.location.reload(); // Refresh the page
   };
   const updateTopics = () => {
-    try {
       datas.forEach((item, index) => {
         const updatedTopic = editTopics[index] || item; // Use edited value if available, else use original
-        axios.put(`${process.env.API_URL}/api/teacher/updatetopic/${updatedTopic}`, {
+        if (updatedTopic === item) {
+          return;
+        }
+        if (updatedTopic === '') {
+          alert('Topic name cannot be empty');
+          return;
+        }
+        axios.post(`${process.env.API_URL}/api/teacher/updatetopic/${updatedTopic}`, {
           current: datas[index]
         })
           .then(response => {
@@ -157,11 +163,7 @@ const topics = () => {
             alert('An error occurred while updating topic information. Please try again later.');
           });
       });
-    } catch (error) {
-      alert('An error occurred while updating topic information. Please try again later.');
-    }
-
-    window.location.reload(); // Refresh the page
+    //window.location.reload(); // Refresh the page
   };
   const toggleStudentTrackerPopup = () => {
     setStudentTrackerPopupVisible(prev => !prev);
@@ -192,7 +194,7 @@ const topics = () => {
 
 
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.searchContainer}>
@@ -315,7 +317,7 @@ const topics = () => {
           </div>
         )}
       </div>
-    </>
+      </div>
   );
 };
 

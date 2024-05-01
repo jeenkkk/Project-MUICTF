@@ -7,7 +7,12 @@
   min-height: 100vh;
   padding: 20px;
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* Search Bar Styles */
 .searchContainer {
   display: flex;

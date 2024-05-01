@@ -101,6 +101,8 @@ exports.gettopic = (req, res) => { //get 1 topic
 }
 
 exports.updatetopic = (req, res) => { //update 1 topic
+    console.log(req.body);
+    console.log(req.params);
     try {
         const newtopic = req.params.topic; // Destructure topic name and new name from request body
         const current = req.body.current;

@@ -72,7 +72,7 @@ const QuestionofTCFS = () => {
         setSearchQuery(event.target.value);
     };
     return (
-        <>
+        <div className={styles.pageContainer}>
             {/* Navbar */}
             <Navbar />
 
@@ -97,7 +97,7 @@ const QuestionofTCFS = () => {
                 {/* Grid */}
                 <div className={styles.gridContainer}>{renderGridItems()}</div>
             </div>
-        </>
+        </div>
     );
 };
 

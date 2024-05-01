@@ -83,7 +83,7 @@ const QuestionSubmission = () => {
     };
 
     return (
-        <>
+        <div className={styles.pageContainer}>
             <Navbar />
             <div className={styles.pageStyle}>
                 <div className={styles.gridContainer}>
@@ -161,7 +161,7 @@ const QuestionSubmission = () => {
                     </div>
                 </div>
             </div>
-        </>
+            </div>
     );
 };
 

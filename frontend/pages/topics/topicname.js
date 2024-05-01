@@ -247,7 +247,7 @@ const QuestionofTC = () => {
         return count;
     };
     return (
-        <>
+        <div className={styles.pageContainer}>
             {/* Navbar */}
             <Navbar />
 
@@ -454,7 +454,7 @@ const QuestionofTC = () => {
                 )}
 
             </div>
-        </>
+            </div>
     );
 };
 

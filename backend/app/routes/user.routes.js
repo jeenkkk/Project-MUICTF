@@ -21,6 +21,7 @@ module.exports = function (app) {
   // feedback
   app.post("/api/sendfeedback", authJwt.verifyToken, file.sendfeedback);
   app.post("/api/likeordislike", authJwt.verifyToken, file.likeordislike);
+  app.post("/api/sendfeedbackvulnhub", authJwt.verifyToken, file.sendfeedbackvulnhub);
 
   // rank
   app.get("/api/findmatches", authJwt.verifyToken, rank.findmatches);

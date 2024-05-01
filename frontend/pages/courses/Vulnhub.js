@@ -84,7 +84,7 @@ const Vulnhub = () => {
   const difficultyOptions = ['All', 'Beginner', 'Easy', 'Medium', 'Hard', 'Unknown'];
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.searchContainer}>

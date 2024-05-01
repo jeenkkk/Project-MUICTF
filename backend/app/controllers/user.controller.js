@@ -77,7 +77,7 @@ exports.updateinfo = async (req, res) => {
                 : req.body.newEmail
             }, function (err) {
 
-              if (err) return res.status(404).send(handleError(err));
+              if (err) return res.status(404).send(err);
               else {
                 return res.status(200).send({ message: "Email updated." });
               }
@@ -85,7 +85,7 @@ exports.updateinfo = async (req, res) => {
           }
           else if (req.body.newEmail == "") {
             User.updateOne({ _id: userid }, { password: bcrypt.hashSync(req.body.newPassword, 8) }, function (err) {
-              if (err) return res.status(404).send(handleError(err));
+              if (err) return res.status(404).send(err);
               else {
                 return res.status(200).send({ message: "Password updated." });
               }
@@ -93,7 +93,7 @@ exports.updateinfo = async (req, res) => {
           }
           else {
             User.updateOne({ _id: userid }, { email: req.body.newEmail, password: bcrypt.hashSync(req.body.newPassword, 8) }, function (err) {
-              if (err) return res.status(404).send(handleError(err));
+              if (err) return res.status(404).send(err);
               else {
                 return res.status(200).send({ message: "Password and Email updated." });
               }
@@ -138,7 +138,7 @@ exports.deleteuser = async (req, res) => {
         }
         else {
           User.deleteOne({ _id: userid }, function (err) {
-            if (err) return res.status(404).send(handleError(err));
+            if (err) return res.status(404).send(err);
             else return res.status(200).send({ message: "User deleted." });
           });
         }

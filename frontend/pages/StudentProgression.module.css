@@ -3,23 +3,34 @@
     padding: 20px;
     position: relative;
     background-color: #121212;
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
-  
+
+.pageContainer {
+    overflow: auto;
+    margin: -1rem;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .gridContainer {
     display: grid;
     margin-top: 1rem;
     gap: 20px;
-    justify-content: center; /* Center the grid items horizontally */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent light background */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Border color for the grid */
-    padding: 20px; /* Add padding for better visibility */
+    justify-content: center;
+    /* Center the grid items horizontally */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Slightly transparent light background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Border color for the grid */
+    padding: 20px;
+    /* Add padding for better visibility */
 }
-  
+
 .previousButtonContainer {
     margin-left: 2rem;
 }
-  
+
 .previousButton {
     background-color: #3498db;
     color: #fff;
@@ -30,11 +41,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
+
 .previousButton:hover {
     background-color: #2980b9;
 }
-  
+
 .chart {
     background: rgba(255, 255, 255, 0.1);
     justify-content: flex-start;
@@ -43,35 +54,38 @@
     padding: 0 5px;
     display: flex;
     height: 40px;
-    width: 500px; /* This width might be causing the issue */
+    width: 500px;
+    /* This width might be causing the issue */
 }
-  
+
 .chart span {
     margin-left: 5px;
     color: #fff;
     font-weight: bolder;
 }
-  
+
 .bar {
     background: #12d44c;
     height: 30px;
-    width: 0; /* This width should be controlled dynamically */
+    width: 0;
+    /* This width should be controlled dynamically */
 }
-  
+
 @keyframes load {
     0% {
-      width: 0;
+        width: 0;
     }
+
     100% {
-      width: 68%;
+        width: 68%;
     }
 }
-  
+
 /* Additional styling for your cards and other components if needed */
 .card {
     margin-bottom: 20px;
 }
-  
+
 .cardHeader {
     display: flex;
     justify-content: space-between;
@@ -79,11 +93,11 @@
     padding: 10px;
     background-color: #000;
 }
-  
+
 .progressBar {
     margin-top: 10px;
 }
-  
+
 .titleBold {
     font-weight: bold;
     color: white;
@@ -95,7 +109,7 @@
     display: flex;
     margin-bottom: 1rem;
 }
-  
+
 /* Pagination button */
 .paginationButton {
     background-color: #3498db;
@@ -107,11 +121,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-  
+
 .paginationButton:hover {
     background-color: #2980b9;
 }
-  
+
 /* Active pagination button */
 .paginationButtonActive {
     background-color: #2980b9;

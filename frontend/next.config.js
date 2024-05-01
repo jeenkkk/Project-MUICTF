@@ -4,7 +4,7 @@
 const nextConfig = {
     output: 'export',
     env:{
-        API_URL: 'localhost:80', // Your API URL
+        API_URL: 'https://muictfbackend.azurewebsites.net'
     },
     //trailingSlash: true 
 }

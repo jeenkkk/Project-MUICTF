@@ -32,7 +32,7 @@ const ProfilePage = () => {
   // Function to handle updating user information
   const handleUpdate = async () => {
     if ((newPassword === '' && newEmail === '') || password === '') {
-      alert('Please enter new password or email');
+      alert('Please enter password before update new password or new email');
     } else {
       try {
         const response = await axios.put(`${process.env.API_URL}/api/updateinfo`, {
@@ -74,7 +74,7 @@ const ProfilePage = () => {
     window.location.href = '/StudentProgression'; // Adjust the path as needed
   };
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.container}>
@@ -86,15 +86,15 @@ const ProfilePage = () => {
           </div>
           {/* Middle Box */}
           <div className={styles.middleBox}>
-          <div className={styles.profileContainer}>
-          <div className={styles.logoContainer}>
-            <img src="muictf_wlogo.png" alt="MUICTF Logo" className={styles.logoImage} />
-          </div>
-          <h2>Profile</h2>
-          <div className={styles.profileField}>
-            <label>Username:</label>
-            <input type="text" value={username} readOnly />
-          </div>
+            <div className={styles.profileContainer}>
+              <div className={styles.logoContainer}>
+                <img src="muictf_wlogo.png" alt="MUICTF Logo" className={styles.logoImage} />
+              </div>
+              <h2>Profile</h2>
+              <div className={styles.profileField}>
+                <label>Username:</label>
+                <input type="text" value={username} readOnly />
+              </div>
               <div className={styles.profileField}>
                 <label>Password:</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -134,7 +134,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

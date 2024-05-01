@@ -52,7 +52,7 @@ const coursesFS = () => {
 
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.searchContainer}>

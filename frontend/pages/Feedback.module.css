@@ -1,41 +1,57 @@
 .pageStyle {
-    background-color: #121212;
-    color: #ffffff;
-    min-height: 100vh;
-    padding: 20px; /* Add padding to give some space around the content */
-  }
-  
-  .gridContainer {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    grid-gap: 20px; /* Add some gap between grid items */
-  }
-  
-  .gridItem {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s, cursor 0.3s; /* Add transition for smooth hover effect */
-  }
-  
-  .gridItem:hover {
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transform: scale(1.01); /* Zoom effect on hover */
-  }
-  
-  .feedbackName {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .feedbackDescription {
-    margin-bottom: 10px;
-    white-space: pre-line; /* Wrap text at white spaces and preserve newline characters */
-    overflow-y: auto; /* Add vertical scrollbar if the content overflows vertically */
-    max-height: 200px; /* Set a maximum height for the grid item */
-  }
-  
-  .feedbackUser {
-    font-style: italic;
-    color: #ccc;
-  }
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  /* Add padding to give some space around the content */
+}
+
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* Single column layout */
+  grid-gap: 20px;
+  /* Add some gap between grid items */
+}
+
+.gridItem {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s, cursor 0.3s;
+  /* Add transition for smooth hover effect */
+}
+
+.gridItem:hover {
+  cursor: pointer;
+  /* Change cursor to pointer on hover */
+  transform: scale(1.01);
+  /* Zoom effect on hover */
+}
+
+.feedbackName {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feedbackDescription {
+  margin-bottom: 10px;
+  white-space: pre-line;
+  /* Wrap text at white spaces and preserve newline characters */
+  overflow-y: auto;
+  /* Add vertical scrollbar if the content overflows vertically */
+  max-height: 200px;
+  /* Set a maximum height for the grid item */
+}
+
+.feedbackUser {
+  font-style: italic;
+  color: #ccc;
+}

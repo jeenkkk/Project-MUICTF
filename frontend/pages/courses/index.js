@@ -51,7 +51,9 @@ const courses = () => {
   const updateCourses = () => {
     datas.forEach((item, index) => {
       const updatedCourse = editCourses[index] || item; // Use edited value if available, else use original
-      axios.put(`${process.env.API_URL}/api/teacher/updatecourse/${updatedCourse}`, {
+      if (updatedCourse === item) return; // Skip if no changes
+      if (updatedCourse.trim() === '') return; // Skip if empty
+      axios.post(`${process.env.API_URL}/api/teacher/updatecourse/${updatedCourse}`, {
         current: datas[index]
       })
         .then(response => {
@@ -61,7 +63,7 @@ const courses = () => {
           handleError(error);
         });
     });
-    window.location.reload(); // Refresh the page
+    //window.location.reload(); // Refresh the page
   };
   const handleCloseandEdit = () => {
     setEditDeleteModalVisible(false);
@@ -167,7 +169,7 @@ const courses = () => {
     return count;
   };
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.searchContainer}>

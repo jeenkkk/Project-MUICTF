@@ -38,7 +38,7 @@ const ProfilePage = () => {
   // Function to handle updating user information
   const handleUpdate = async () => {
     if ((newPassword === '' && newEmail === '') || password === '') {
-      alert('Please enter new password or email');
+      alert('Please enter password before update new password or new email');
     } else {
       try {
         const response = await axios.put(`${process.env.API_URL}/api/updateinfo`, {
@@ -88,7 +88,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={`${styles.pageStyle}`}>
         <div className={styles.profileContainer}>
@@ -159,7 +159,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

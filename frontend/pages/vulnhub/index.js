@@ -66,11 +66,15 @@ const VulnhubSubmission = () => {
   };
   const handleFeedbackSubmission = () => {
     try {
+      if (feedback.length <= 0 || feedback.length > 1000 || specialCharactersRegex.test(feedback)) {
+        alert("Feedback must be between 1 and 1000 characters long and should not contain special characters like %, &, <, >, \", ', /");
+        return;
+      }
       axios.defaults.withCredentials = true;
       const urlParams = new URLSearchParams(window.location.search);
       const problemName = urlParams.get('question');
-      const res = axios.post(`${process.env.API_URL}/api/sendfeedback`, {
-        problemname: problemName + "vulnhub",
+      const res = axios.post(`${process.env.API_URL}/api/sendfeedbackvulnhub`, {
+        problemname: problemName,
         feedback: feedback
       });
     } catch (error) {
@@ -82,7 +86,7 @@ const VulnhubSubmission = () => {
 
 
   return (
-    <div>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.VulnhubPicContainer}>

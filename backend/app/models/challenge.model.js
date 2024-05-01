@@ -11,11 +11,21 @@ const Challenge = mongoose.model(
     Download_Link: String,
     Description: String,
     Flag: [
-      { 
-        type: String 
+      {
+        type: String
       }
     ],
     Solution: String,
+    feedback: [
+      {
+        type: String, required: false
+      }
+    ],
+    userfeedback: [
+      {
+        type: String, required: false
+      }
+    ],
 
   })
 );

@@ -114,7 +114,7 @@ const StudentProgressionFS = () => {
   );
 
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.pageStyle}>
         <div className={styles.previousButtonContainer}>
@@ -175,7 +175,7 @@ const StudentProgressionFS = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

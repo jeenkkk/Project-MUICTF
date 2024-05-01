@@ -12,9 +12,9 @@ module.exports = function (app) {
   //admin
   app.delete("/api/admin/deleteuser/:user", authJwt.verifyToken, authJwt.isAdmin, controller.deleteuser);
   app.get("/api/admin/alluser", authJwt.verifyToken, authJwt.isAdmin, controller.alluser);
-  app.put("/api/admin/updateuser", authJwt.verifyToken, authJwt.isAdmin, controller.updateuser);
+  app.put("/api/admin/updateuser/:user", authJwt.verifyToken, authJwt.isAdmin, controller.updateuser);
   app.put("/api/admin/updatemultipleuser/:user", authJwt.verifyToken, authJwt.isAdmin, controller.updatemultipleuser);
-  app.get("/api/alive", (req, res) => {
-    res.send("alive------");
+  app.get("/api/checkalive", (req, res) =>{
+    res.status(200).send({ message: "Server is alive" });
   });
 };

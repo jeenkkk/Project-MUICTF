@@ -29,7 +29,7 @@
         "Difficulty": "Easy",
         "Download_Link": "https://download.vulnhub.com/theplanets/Earth.ova",
         "Description": "Difficulty: Easy\nEarth is an easy box though you will likely find it more challenging than \"Mercury\" in this series and on the harder side of easy, depending on your experience. There are two flags on the box: a user and root flag which include an md5 hash. This has been tested on VirtualBox so may not work correctly on VMware. Any questions/issues or feedback please email me at: SirFlash at protonmail.com, though it may take a while for me to get back to you.\n\n\n\n\n\n\n\n\n\nDescription\n\n\u00d7\n\n\n\nThis section is for various information that has been collected about the release, such as quotes from the webpage and/or the readme file.\nThese sources of information are usually helpful towards the completion of the release as the author can drop hints* as well as methods to help get the release up and working.\n\n\n* This is a 'little' hint. Useful to help you get started and it shouldn't give anything away that you quickly could find out for yourself.",
-        "Flag": "{b0da9554d29db2117b02aa8b66ec493e}",
+        "Flag": "MUICTF{b0da9554d29db2117b02aa8b66ec493e}",
         "Solution": "https://medium.com/@wiktorderda/vulnhub-the-planets-earth-ctf-4d4acfeb1428"
     },
     {

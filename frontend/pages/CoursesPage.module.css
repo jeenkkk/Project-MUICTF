@@ -1,5 +1,10 @@
 /* CoursesPage.module.css */
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .pageStyle {
   background-color: #121212;
   color: #ffffff;

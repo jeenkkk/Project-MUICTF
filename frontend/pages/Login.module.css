@@ -6,7 +6,12 @@
   display: flex;
   flex-direction: column;
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .lbox1,
 .lbox2 {
   width: 100%;

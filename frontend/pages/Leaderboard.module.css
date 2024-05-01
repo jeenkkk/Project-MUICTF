@@ -4,7 +4,12 @@
   min-height: 100vh;
   position: relative; 
 }
-
+.pageContainer {
+  overflow: auto;
+  margin: -1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
 .container {
   margin: 20px;
 

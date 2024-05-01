@@ -298,6 +298,7 @@ const Leaderboard = () => {
     ))
   }
   return (
+    <div className={styles.pageContainer}>
     <div className={styles.pageStyle}>
       <Navbar />
       <div className={styles.invisibleBox}>
@@ -421,12 +422,13 @@ const Leaderboard = () => {
       <div className={styles.startButtonContainer}>
         <button
           className={styles.startButton}
-          onClick={handleStartButtonClick} // Start button click handler
+          onClick={handleStartButtonClick}
           disabled={!isStartButtonEnabled() || showCooldownPopup} // Disable the button based on rules
         >
           Start
         </button>
       </div>
+    </div>
     </div>
   );
 };

@@ -59,20 +59,19 @@ const UserManagement = () => {
   // Function to handle the update
   const handleUpdate = () => {
     try {
-      // In a real-world scenario, you would send the updated data to your backend/API here
       userData.forEach((item, index) => {
         const updateuser = item.username;
         const updaterole = editRoles[index] || ""; // Use edited value if available, else use original
         const updatedpassword = editpassword[index] || "";
         const updatedEmail = editEmail[index] || "";
         if (updaterole !== "" || updatedpassword !== "" || updatedEmail !== "") {
-          axios.put(`${process.env.API_URL}/api/admin/updatemultipleuser/${updateuser}`, {
+          axios.put(`${process.env.API_URL}/api/admin/updateuser/${updateuser}`, {
             roles: updaterole,
             password: updatedpassword,
             email: updatedEmail
           })
             .then(response => {
-              //alert('User updated successfully');
+              alert('User updated successfully');
             })
             .catch(error => {
               alert('An error occurred while updating user information. Please try again later.');
@@ -80,8 +79,7 @@ const UserManagement = () => {
         }
 
       });
-      window.location.reload(); // Refresh the page
-      alert('User updated successfully');
+      //window.location.reload(); // Refresh the page
     } catch (error) {
       alert('An error occurred while updating user information. Please try again later.');
     }
@@ -112,7 +110,12 @@ const UserManagement = () => {
   };
 
   const handleDelete = () => {
-    setShowConfirmation(true);
+    if(selectedRows.length === 0) {
+      alert('Please select at least one user to delete');
+      return;
+    }else{
+      setShowConfirmation(true);
+    }
   };
 
   const confirmDelete = () => {
@@ -127,13 +130,14 @@ const UserManagement = () => {
         });
     });
     setShowConfirmation(false);
-    window.location.reload(); // Refresh the page
+    //window.location.reload(); // Refresh the page
   };
 
   const cancelDelete = () => {
     setShowConfirmation(false);
   };
   return (
+    <div className={styles.pageContainer}>
     <div className={styles.pageStyle}>
       <Navbar />
       <div className={styles.managerUsersText}>
@@ -237,6 +241,7 @@ const UserManagement = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
