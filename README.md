@@ -36,7 +36,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 6. Navigate to the backend directory:
     ```sh
-    cd ../backend
+    cd backend
     ```
 
 7. Install dependencies:
