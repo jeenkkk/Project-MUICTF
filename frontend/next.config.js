@@ -4,7 +4,7 @@
 const nextConfig = {
     output: 'export',
     env:{
-        API_URL: 'https://muictfbackend.azurewebsites.net'
+        API_URL: 'YOUR_URL'
     },
     //trailingSlash: true 
 }
